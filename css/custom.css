@@ -1,0 +1,130 @@
+* {
+    border-style: border-box;
+}
+
+#content-wrap {
+    margin-bottom: 40px;
+}
+
+iframe {
+    display: none;
+}
+
+.formDiv {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+    margin: 0 auto;
+    color: #000000;
+}
+
+@media only screen and (max-width: 600px) {
+    .formDiv {
+        width: 90%;
+    }
+}
+
+.divSelector {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    -webkit-transition: opacity 1.5s;
+    transition: opacity 1.5s;
+}
+
+.selectorHeader {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0px 10px 0px;
+}
+
+.confirmDiv {
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.generalForm {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#hst1, #hst2, #hst3, #ct1, #ct2, #ct3, #st1, #st2, #dt1, #dt2, #dt3 {
+    opacity: 0;
+    -webkit-transition: opacity 1.5s;
+    transition: opacity 1.5s;
+}
+
+#highschoolFormDiv, #collegeFormDiv, #sprintFormDiv, #expoFormDiv, #summitFormDiv, .confirmDiv {
+    opacity: 0;
+    -webkit-transition: opacity 1.5s;
+    transition: opacity 1.5s;
+}
+
+.qualifications, .schoolInfoHeader, .yourInfoHeader, .coachHeader, .teamHeader, .memberHeader {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submitDiv {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+hr {
+    width: 100%;
+}
+
+h1 {
+    margin: 0;
+}
+
+h3 {
+    margin: 20px 0px 20px 0px;
+}
+
+h4 {
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+ol {
+    margin: 15px 0px 0px 20px;
+}
