@@ -1,8 +1,11 @@
 jQuery(document).ready(function($){
+    // Constants
+    var CHANGE_DURATION = 250;
 
+    // Hide everything at the start
+    $(".team").hide();
     $(".confirmDiv").hide();
     $(".generalForm").hide();
-    $(".team").hide();
 
     $(".divSelector").css("opacity", "1");
 
@@ -37,212 +40,141 @@ jQuery(document).ready(function($){
     });
     
     $(document).on("change", "#division", function(){
+        $("#hteamNumber").val("None");
+        $("#steamNumber").val("None");
+        $("#cteamNumber").val("None");
+        $("#dteamNumber").val("None");    
+        $(".generalForm").hide(CHANGE_DURATION);
         if ($("#division").val() == "Highschool") {
-            $(".generalForm").show();
-            $("#highschoolFormDiv").show();
-            $("#highschoolFormDiv").css("opacity", "1");
-            $("#collegeFormDiv").hide();
-            $("#collegeFormDiv").css("opacity", "0");
-            $("#sprintFormDiv").hide();
-            $("#sprintFormDiv").css("opacity", "0");
-            $("#expoFormDiv").hide();
-            $("#expoFormDiv").css("opacity", "0");
-            $("#summitFormDiv").hide();
-            $("#summitFormDiv").css("opacity", "0");
+            $("#highschoolFormDiv").show(CHANGE_DURATION);
         } else if ($("#division").val() == "College") {
-            $(".generalForm").show();
-            $("#highschoolFormDiv").hide();
-            $("#highschoolFormDiv").css("opacity", "0");
-            $("#collegeFormDiv").show();
-            $("#collegeFormDiv").css("opacity", "1");
-            $("#sprintFormDiv").hide();
-            $("#sprintFormDiv").css("opacity", "0");
-            $("#expoFormDiv").hide();
-            $("#expoFormDiv").css("opacity", "0");
-            $("#summitFormDiv").hide();
-            $("#summitFormDiv").css("opacity", "0");
+            $("#collegeFormDiv").show(CHANGE_DURATION);
         } else if ($("#division").val() == "Circuit Sprint") {
-            $(".generalForm").show();
-            $("#highschoolFormDiv").hide();
-            $("#highschoolFormDiv").css("opacity", "0");
-            $("#collegeFormDiv").hide();
-            $("#collegeFormDiv").css("opacity", "0");
-            $("#sprintFormDiv").show();
-            $("#sprintFormDiv").css("opacity", "1");
-            $("#expoFormDiv").hide();
-            $("#expoFormDiv").css("opacity", "0");
-            $("#summitFormDiv").hide();
-            $("#summitFormDiv").css("opacity", "0");
+            $("#sprintFormDiv").show(CHANGE_DURATION);
         } else if ($("#division").val() == "Expo") {
-            $(".generalForm").show();
-            $("#highschoolFormDiv").hide();
-            $("#highschoolFormDiv").css("opacity", "0");
-            $("#collegeFormDiv").hide();
-            $("#collegeFormDiv").css("opacity", "0");
-            $("#sprintFormDiv").hide();
-            $("#sprintFormDiv").css("opacity", "0");
-            $("#expoFormDiv").show();
-            $("#expoFormDiv").css("opacity", "1");
-            $("#summitFormDiv").hide();
-            $("#summitFormDiv").css("opacity", "0");
+            $("#expoFormDiv").show(CHANGE_DURATION);
         } else if ($("#division").val() == "Summit") {
-            $(".generalForm").show();
-            $("#highschoolFormDiv").hide();
-            $("#highschoolFormDiv").css("opacity", "0");
-            $("#collegeFormDiv").hide();
-            $("#collegeFormDiv").css("opacity", "0");
-            $("#sprintFormDiv").hide();
-            $("#sprintFormDiv").css("opacity", "0");
-            $("#expoFormDiv").hide();
-            $("#expoFormDiv").css("opacity", "0");
-            $("#summitFormDiv").show();
-            $("#summitFormDiv").css("opacity", "1");
-        } else {
-            $(".generalForm").hide();
-            $("#highschoolFormDiv").css("opacity", "0");
-            $("#collegeFormDiv").css("opacity", "0");
-            $("#sprintFormDiv").css("opacity", "0");
-            $("#expoFormDiv").css("opacity", "0");
-            $("#summitFormDiv").css("opacity", "0");
+            $("#summitFormDiv").show(CHANGE_DURATION);
         }
     });
 
     $(document).on("change", "#hteamNumber", function(){
+        if ($("#hteamNumber").val() == "None") {
+            $(".team").hide(CHANGE_DURATION);
+        } else {
+            $(".team").show(CHANGE_DURATION);
+        }
+        if ($("#hteamNumber").val() >= 1) {
+            $("#hst1").show(CHANGE_DURATION);
+        } else {
+            $("#hst1").hide(CHANGE_DURATION);
+        }
+        if ($("#hteamNumber").val() >= 2) {
+            $("#hst2").show(CHANGE_DURATION);
+        } else {
+            $("#hst2").hide(CHANGE_DURATION);
+        }
+        if ($("#hteamNumber").val() >= 3) {
+            $("#hst3").show(CHANGE_DURATION);
+        } else {
+            $("#hst3").hide(CHANGE_DURATION);
+        }
         if ($("#hteamNumber").val() == 1) {
             updateRequiredFields("#hteamNumber", 1);
-            $(".team").show();
-            $("#hst1").show();
-            $("#hst1").css("opacity", "1");
-            $("#hst2").hide();
-            $("#hst2").css("opacity", "0");
-            $("#hst3").hide();
-            $("#hst3").css("opacity", "0");
         } else if ($("#hteamNumber").val() == 2) {
             updateRequiredFields("#hteamNumber", 2);
-            $(".team").show();
-            $("#hst1").show();
-            $("#hst1").css("opacity", "1");
-            $("#hst2").show();
-            $("#hst2").css("opacity", "1");
-            $("#hst3").hide();
-            $("#hst3").css("opacity", "0");
         } else if ($("#hteamNumber").val() == 3) {
             updateRequiredFields("#hteamNumber", 3);
-            $(".team").show();
-            $("#hst1").show();
-            $("#hst1").css("opacity", "1");
-            $("#hst2").show();
-            $("#hst2").css("opacity", "1");
-            $("#hst3").show();
-            $("#hst3").css("opacity", "1");
-        } else {
-            $(".team").hide();
-            $("#hst1").css("opacity", "0");
-            $("#hst2").css("opacity", "0");
-            $("#hst3").css("opacity", "0");
         }
     });
 
     $(document).on("change", "#cteamNumber", function(){
+        if ($("#cteamNumber").val() == "None") {
+            $(".team").hide(CHANGE_DURATION);
+        } else {
+            $(".team").show(CHANGE_DURATION);
+        }
+        if ($("#cteamNumber").val() >= 1) {
+            $("#ct1").show(CHANGE_DURATION);
+        } else {
+            $("#ct1").hide(CHANGE_DURATION);
+        }
+        if ($("#cteamNumber").val() >= 2) {
+            $("#ct2").show(CHANGE_DURATION);
+        } else {
+            $("#ct2").hide(CHANGE_DURATION);
+        }
+        if ($("#cteamNumber").val() >= 3) {
+            $("#ct3").show(CHANGE_DURATION);
+        } else {
+            $("#ct3").hide(CHANGE_DURATION);
+        }
         if ($("#cteamNumber").val() == 1) {
             updateRequiredFields("#cteamNumber", 1);
-            $(".team").show();
-            $("#ct1").show();
-            $("#ct1").css("opacity", "1");
-            $("#ct2").hide();
-            $("#ct2").css("opacity", "0");
-            $("#ct3").hide();
-            $("#ct3").css("opacity", "0");
         } else if ($("#cteamNumber").val() == 2) {
             updateRequiredFields("#cteamNumber", 2);
-            $(".team").show();
-            $("#ct1").show();
-            $("#ct1").css("opacity", "1");
-            $("#ct2").show();
-            $("#ct2").css("opacity", "1");
-            $("#ct3").hide();
-            $("#ct3").css("opacity", "0");
         } else if ($("#cteamNumber").val() == 3) {
             updateRequiredFields("#cteamNumber", 3);
-            $(".team").show();
-            $("#ct1").show();
-            $("#ct1").css("opacity", "1");
-            $("#ct2").show();
-            $("#ct2").css("opacity", "1");
-            $("#ct3").show();
-            $("#ct3").css("opacity", "1");
-        } else {
-            $(".team").hide();
-            $("#ct1").css("opacity", "0");
-            $("#ct2").css("opacity", "0");
-            $("#ct3").css("opacity", "0");
-        }
+        } 
     });
 
     $(document).on("change", "#steamNumber", function(){
+        if ($("#steamNumber").val() == "None") {
+            $(".team").hide(CHANGE_DURATION);
+        } else {
+            $(".team").show(CHANGE_DURATION);
+        }
+        if ($("#steamNumber").val() >= 1) {
+            $("#st1").show(CHANGE_DURATION);
+        } else {
+            $("#st1").hide(CHANGE_DURATION);
+        }
+        if ($("#steamNumber").val() >= 2) {
+            $("#st2").show(CHANGE_DURATION);
+        } else {
+            $("#st2").hide(CHANGE_DURATION);
+        }
+        if ($("#steamNumber").val() >= 3) {
+            $("#st3").show(CHANGE_DURATION);
+        } else {
+            $("#st3").hide(CHANGE_DURATION);
+        }
         if ($("#steamNumber").val() == 1) {
             updateRequiredFields("#steamNumber", 1);
-            $(".team").show();
-            $("#st1").show();
-            $("#st1").css("opacity", "1");
-            $("#st2").hide();
-            $("#st2").css("opacity", "0");
         } else if ($("#steamNumber").val() == 2) {
             updateRequiredFields("#steamNumber", 2);
-            $(".team").show();
-            $("#st1").show();
-            $("#st1").css("opacity", "1");
-            $("#st2").show();
-            $("#st2").css("opacity", "1");
         } else if ($("#steamNumber").val() == 3) {
             updateRequiredFields("#steamNumber", 3);
-            $(".team").show();
-            $("#st1").show();
-            $("#st1").css("opacity", "1");
-            $("#st2").show();
-            $("#st2").css("opacity", "1");
-            $("#st3").show();
-            $("#st3").css("opacity", "1");
-        } else {
-            $(".team").hide();
-            $("#st1").css("opacity", "0");
-            $("#st2").css("opacity", "0");
-        }
+        } 
     });
 
     $(document).on("change", "#dteamNumber", function(){
+        if ($("#dteamNumber").val() == "None") {
+            $(".team").hide(CHANGE_DURATION);
+        } else {
+            $(".team").show(CHANGE_DURATION);
+        }
+        if ($("#dteamNumber").val() >= 1) {
+            $("#dt1").show(CHANGE_DURATION);
+        } else {
+            $("#dt1").hide(CHANGE_DURATION);
+        }
+        if ($("#dteamNumber").val() >= 2) {
+            $("#dt2").show(CHANGE_DURATION);
+        } else {
+            $("#dt2").hide(CHANGE_DURATION);
+        }
+        if ($("#dteamNumber").val() >= 3) {
+            $("#dt3").show(CHANGE_DURATION);
+        } else {
+            $("#dt3").hide(CHANGE_DURATION);
+        }
         if ($("#dteamNumber").val() == 1) {
             updateRequiredFields("#dteamNumber", 1);
-            $(".team").show();
-            $("#dt1").show();
-            $("#dt1").css("opacity", "1");
-            $("#dt2").hide();
-            $("#dt2").css("opacity", "0");
-            $("#dt3").hide();
-            $("#dt3").css("opacity", "0");
         } else if ($("#dteamNumber").val() == 2) {
             updateRequiredFields("#dteamNumber", 2);
-            $(".team").show();
-            $("#dt1").show();
-            $("#dt1").css("opacity", "1");
-            $("#dt2").show();
-            $("#dt2").css("opacity", "1");
-            $("#dt3").hide();
-            $("#dt3").css("opacity", "0");
         } else if ($("#dteamNumber").val() == 3) {
             updateRequiredFields("#dteamNumber", 3);
-            $(".team").show();
-            $("#dt1").show();
-            $("#dt1").css("opacity", "1");
-            $("#dt2").show();
-            $("#dt2").css("opacity", "1");
-            $("#dt3").show();
-            $("#dt3").css("opacity", "1");
-        } else {
-            $(".team").hide();
-            $("#dt1").css("opacity", "0");
-            $("#dt2").css("opacity", "0");
-            $("#dt3").css("opacity", "0");
         }
     });
 

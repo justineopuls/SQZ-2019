@@ -73,18 +73,6 @@ iframe {
     width: 100%;
 }
 
-#hst1, #hst2, #hst3, #ct1, #ct2, #ct3, #st1, #st2, #dt1, #dt2, #dt3 {
-    opacity: 0;
-    -webkit-transition: opacity 1.5s;
-    transition: opacity 1.5s;
-}
-
-#highschoolFormDiv, #collegeFormDiv, #sprintFormDiv, #expoFormDiv, #summitFormDiv, .confirmDiv {
-    opacity: 0;
-    -webkit-transition: opacity 1.5s;
-    transition: opacity 1.5s;
-}
-
 .qualifications, .schoolInfoHeader, .yourInfoHeader, .coachHeader, .teamHeader, .memberHeader {
     display: -webkit-box;
     display: -moz-box;
