@@ -61,7 +61,7 @@ h2 {
     border-radius: 50%;
 }
 
-.college-quiz-bee:hover, .left:hover {
+.college-quiz-bee:hover, .hs-quiz-bee:hover, .high-school-main:hover {
     background-color: #cc0000;
     border: solid 5px #b60009;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -77,7 +77,7 @@ h2 {
     z-index: 99;
 }
 
-.ckt-sprint:hover, .right:hover {
+.ckt-sprint:hover, .hs-workshop:hover, .college-main:hover {
     background-color: #0000f6;
     border: solid 5px #000099;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -85,7 +85,7 @@ h2 {
     z-index: 99;
 }
 
-.ckt-sprint, .college-quiz-bee, .tech-de-con, .right, .left {
+.ckt-sprint, .college-quiz-bee, .tech-de-con, .hs-quiz-bee, .hs-workshop, .high-school-main, .college-main {
     transition: -webkit-clip-path 0.6s linear;
     transition: clip-path 0.6s linear;
     transition: clip-path 0.6s linear, -webkit-clip-path 0.6s linear;

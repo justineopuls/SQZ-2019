@@ -2,22 +2,55 @@ $(document).ready(function(){
     $(".division").hide();
     $(".high-school").hide();
     $(".college").hide();
+    $(".logo-header").hide();
+    $(".college-main").hide();
+    $(".high-school-main").hide();
+
+    var selectionScreen = 0;
 
     $('#sqz-logo').click(function() {
+        if (selectionScreen == 0) {
+            $(".college-main").fadeToggle('fast');
+            $(".high-school-main").fadeToggle('fast');
+        }
         $(".logo-container").fadeToggle('fast');
+        $(".logo-header").fadeToggle('slow');
         $('.division').show('slow');
+        selectionScreen = 1;
     });
 
-    $('#high-school-main').click(function() {
-        $("#college-main").fadeToggle('fast');
-        $("#high-school-main").fadeToggle('fast');
+    $('.high-school-main').click(function() {
+        $(".college-main").fadeToggle('fast');
+        $(".high-school-main").fadeToggle('fast');
         $('.high-school').show('slow');
+        selectionScreen = 2;
     });
 
-    $('#college-main').click(function() {
-        $("#college-main").fadeToggle('fast');
-        $("#high-school-main").fadeToggle('fast');
+    $('.college-main').click(function() {
+        $(".college-main").fadeToggle('fast');
+        $(".high-school-main").fadeToggle('fast');
         $('.college').show('slow');
+        selectionScreen = 3;
+    });
+
+    $('.logo-header').click(function() {
+        if (selectionScreen == 1) {
+            $(".high-school-main").fadeToggle('fast');
+            $(".college-main").fadeToggle('fast');
+            $(".logo-header").fadeToggle('fast');
+            $(".logo-container").fadeToggle('slow');
+        }
+        if (selectionScreen == 2) {
+            $(".logo-header").fadeToggle('fast');
+            $(".high-school").fadeToggle('fast');
+            $(".logo-container").fadeToggle('slow');
+        }
+        if (selectionScreen == 3) {
+            $(".logo-header").fadeToggle('fast');
+            $(".college").fadeToggle('fast');
+            $(".logo-container").fadeToggle('slow');
+        }
+        selectionScreen = 0;
     });
 
     var isFullscreen = false;
@@ -25,13 +58,13 @@ $(document).ready(function(){
     $('.hs-quiz-bee').click(function() {
         var d = {};
         var speed = 300;
-        if(!isFullscreen){ // MAXIMIZATION
+        if(!isFullscreen){ 
             d.width = "100%";
             d.height = "100%"; 
             isFullscreen = true;
             $(".logo-header").slideUp(speed);
         }
-        else{ // MINIMIZATION            
+        else{             
             d.width = "50%";
             d.height = "70%";            
             isFullscreen = false;
@@ -43,13 +76,13 @@ $(document).ready(function(){
     $('.hs-workshop').click(function() {
         var d = {};
         var speed = 300;
-        if(!isFullscreen){ // MAXIMIZATION
+        if(!isFullscreen){ 
             d.width = "100%";
             d.height = "100%"; 
             isFullscreen = true;
             $(".logo-header").slideUp(speed);
         }
-        else{ // MINIMIZATION            
+        else{             
             d.width = "50%";
             d.height = "70%";            
             isFullscreen = false;
@@ -61,13 +94,13 @@ $(document).ready(function(){
     $('.college-quiz-bee').click(function() {
         var d = {};
         var speed = 300;
-        if(!isFullscreen){ // MAXIMIZATION
+        if(!isFullscreen){ 
             d.width = "100%";
             d.height = "100%"; 
             isFullscreen = true;
             $(".logo-header").slideUp(speed);
         }
-        else{ // MINIMIZATION            
+        else{             
             d.width = "33%";
             d.height = "70%";            
             isFullscreen = false;
@@ -79,13 +112,13 @@ $(document).ready(function(){
     $('.tech-de-con').click(function() {
         var d = {};
         var speed = 300;
-        if(!isFullscreen){ // MAXIMIZATION
+        if(!isFullscreen){ 
             d.width = "100%";
             d.height = "100%"; 
             isFullscreen = true;
             $(".logo-header").slideUp(speed);
         }
-        else{ // MINIMIZATION            
+        else{             
             d.width = "33%";
             d.height = "70%";            
             isFullscreen = false;
@@ -97,13 +130,13 @@ $(document).ready(function(){
     $('.ckt-sprint').click(function() {
         var d = {};
         var speed = 300;
-        if(!isFullscreen){ // MAXIMIZATION
+        if(!isFullscreen){ 
             d.width = "100%";
             d.height = "100%"; 
             isFullscreen = true;
             $(".logo-header").slideUp(speed);
         }
-        else{ // MINIMIZATION            
+        else{             
             d.width = "33%";
             d.height = "70%";            
             isFullscreen = false;
