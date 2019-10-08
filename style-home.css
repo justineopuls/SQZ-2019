@@ -1,5 +1,9 @@
+h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .logo-header {
-    height: 20%;
+    height: 30%;
     width: 100%;
     position: fixed;
     z-index: 1;
@@ -9,7 +13,7 @@
 }
 
 .split {
-    height: 80%;
+    height: 70%;
     width: 50%;
     position: fixed;
     z-index: 1;
@@ -19,7 +23,7 @@
 }
 
 .split-three {
-    height: 80%;
+    height: 70%;
     width: 33%;
     position: fixed;
     z-index: 1;
@@ -55,4 +59,60 @@
 .centered img {
     width: 150px;
     border-radius: 50%;
+}
+
+.college-quiz-bee:hover, .left:hover {
+    background-color: #cc0000;
+    border: solid 5px #b60009;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 99;
+}
+
+.tech-de-con:hover {
+    background-color: #07d50b;
+    border: solid 5px #009900;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 99;
+}
+
+.ckt-sprint:hover, .right:hover {
+    background-color: #0000f6;
+    border: solid 5px #000099;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 99;
+}
+
+.ckt-sprint, .college-quiz-bee, .tech-de-con, .right, .left {
+    transition: -webkit-clip-path 0.6s linear;
+    transition: clip-path 0.6s linear;
+    transition: clip-path 0.6s linear, -webkit-clip-path 0.6s linear;
+    -webkit-clip-path: polygon(
+    calc(0% + 5px) 
+    calc(0% + 5px), 
+
+    calc(100% - 5px) 
+    calc(0% + 5px), 
+
+    calc(100% - 5px) 
+    calc(100% - 5px), 
+
+    calc(0% + 5px) 
+    calc(100% - 5px)
+    );
+    clip-path: polygon(
+    calc(0% + 5px) 
+    calc(0% + 5px), 
+
+    calc(100% - 5px) 
+    calc(0% + 5px), 
+
+    calc(100% - 5px) 
+    calc(100% - 5px), 
+
+    calc(0% + 5px) 
+    calc(100% - 5px)
+    );
 }
