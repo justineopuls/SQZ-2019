@@ -5,8 +5,10 @@ $(document).ready(function(){
     $(".logo-header").hide();
     $(".college-main").hide();
     $(".high-school-main").hide();
+    $(".mechanics").hide();
 
     var selectionScreen = 0;
+    var engaged = false;
 
     $('#sqz-logo').click(function() {
         if (selectionScreen == 0) {
@@ -63,11 +65,13 @@ $(document).ready(function(){
             d.height = "100%"; 
             isFullscreen = true;
             $(".logo-header").slideUp(speed);
+            $(".hsqb").fadeToggle('slow');
         }
         else{             
             d.width = "50%";
             d.height = "70%";            
             isFullscreen = false;
+            $(".hsqb").fadeToggle('fast');
             $(".logo-header").slideDown(speed);
         }
         $(".hs-quiz-bee").animate(d,speed); 
@@ -81,11 +85,13 @@ $(document).ready(function(){
             d.height = "100%"; 
             isFullscreen = true;
             $(".logo-header").slideUp(speed);
+            $(".hsw").fadeToggle('slow');
         }
         else{             
             d.width = "50%";
             d.height = "70%";            
             isFullscreen = false;
+            $(".hsw").fadeToggle('fast');
             $(".logo-header").slideDown(speed);
         }
         $(".hs-workshop").animate(d,speed); 
@@ -114,13 +120,17 @@ $(document).ready(function(){
         var speed = 300;
         if(!isFullscreen){ 
             d.width = "100%";
-            d.height = "100%"; 
+            d.height = "100%";
+            d.left = "0";
+            d.position = "absolute";
             isFullscreen = true;
             $(".logo-header").slideUp(speed);
         }
         else{             
             d.width = "33%";
-            d.height = "70%";            
+            d.height = "70%";
+            d.left = "33%";
+            d.position = "inline block";            
             isFullscreen = false;
             $(".logo-header").slideDown(speed);
         }
