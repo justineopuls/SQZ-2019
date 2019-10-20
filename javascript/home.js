@@ -154,4 +154,14 @@ $(document).ready(function(){
         }
         $(".ckt-sprint").animate(d,speed); 
     });
+
+    $('.tech-de-con')
+        .mouseover(function() {
+            console.log("Test");
+            $('.tech-de-con .img-top', this).attr('src', 'images\Tech.png');
+            $('.ckt-sprint h2', this).attr('background-color', 'white');
+        })
+        .mouseout(function() {
+            $('.ckt-sprint > .centered > img', this).attr('src', 'images\Sprintog.png');
+        });
 });

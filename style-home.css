@@ -116,3 +116,16 @@ h2 {
     calc(100% - 5px)
     );
 }
+
+/* .ckt-sprint .img-top, .college-quiz-bee .img-top, .tech-de-con .img-top, .hs-quiz-bee .img-top, .hs-workshop .img-top, .high-school-main .img-top, .college-main .img-top {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    z-index: 99;
+}
+
+.ckt-sprint:hover .img-top, .college-quiz-bee:hover .img-top, .tech-de-con:hover .img-top, .hs-quiz-bee:hover .img-top, .hs-workshop:hover .img-top, .high-school-main:hover .img-top, .college-main:hover .img-top {
+    display: inline;
+} */
