@@ -12,16 +12,17 @@ $(document).ready(function(){
 
     $('#sqz-logo').click(function() {
         if (selectionScreen == 0) {
-            $(".college-main").fadeToggle('fast');
-            $(".high-school-main").fadeToggle('fast');
+            $(".college-main").fadeToggle('slow');
+            $(".high-school-main").fadeToggle('slow');
         }
         $(".logo-container").fadeToggle('fast');
         $(".logo-header").fadeToggle('slow');
-        $('.division').show('slow');
+        $('.division').show();
         selectionScreen = 1;
     });
 
     $('.high-school-main').click(function() {
+        $('.division').hide();
         $(".college-main").fadeToggle('fast');
         $(".high-school-main").fadeToggle('fast');
         $('.high-school').show('slow');
@@ -29,6 +30,7 @@ $(document).ready(function(){
     });
 
     $('.college-main').click(function() {
+        $('.division').hide();
         $(".college-main").fadeToggle('fast');
         $(".high-school-main").fadeToggle('fast');
         $('.college').show('slow');
@@ -64,13 +66,21 @@ $(document).ready(function(){
             d.width = "100%";
             d.height = "100%"; 
             isFullscreen = true;
+            $('.hs-quiz-bee').css('z-index', '100');
+            $('.hs-quiz-bee').css('background-color', '#cc0000');
+            $('body').css('background-color', '#cc0000');
             $(".logo-header").slideUp(speed);
             $(".hsqb").fadeToggle('slow');
+            $(".hsqb").css('z-index', '1000');
         }
         else{             
             d.width = "50%";
             d.height = "70%";            
             isFullscreen = false;
+            $('.hs-quiz-bee').css('z-index', '');
+            $('.hs-quiz-bee').css('background-color', '');
+            $('.hs-quiz-bee:hover').css('border', '');
+            $('body').css('background-color', '');
             $(".hsqb").fadeToggle('fast');
             $(".logo-header").slideDown(speed);
         }
@@ -84,6 +94,8 @@ $(document).ready(function(){
             d.width = "100%";
             d.height = "100%"; 
             isFullscreen = true;
+            $('.hs-workshop').css('background-color', 'blue');
+            $('body').css('background-color', 'blue');
             $(".logo-header").slideUp(speed);
             $(".hsw").fadeToggle('slow');
         }
@@ -91,6 +103,8 @@ $(document).ready(function(){
             d.width = "50%";
             d.height = "70%";            
             isFullscreen = false;
+            $('.hs-workshop').css('background-color', ''); // remove added css
+            $('body').css('background-color', '');
             $(".hsw").fadeToggle('fast');
             $(".logo-header").slideDown(speed);
         }
@@ -105,12 +119,16 @@ $(document).ready(function(){
             d.height = "100%"; 
             isFullscreen = true;
             $(".logo-header").slideUp(speed);
+            $(".cqb").fadeToggle('slow');
+            $('.college-quiz-bee').css('z-index', '100');
         }
         else{             
             d.width = "33%";
             d.height = "70%";            
             isFullscreen = false;
             $(".logo-header").slideDown(speed);
+            $(".cqb").fadeToggle('fast');
+            $('.college-quiz-bee').css('z-index', '');
         }
         $(".college-quiz-bee").animate(d,speed); 
     });
@@ -125,6 +143,8 @@ $(document).ready(function(){
             d.position = "absolute";
             isFullscreen = true;
             $(".logo-header").slideUp(speed);
+            $(".tdc").fadeToggle('slow');
+            $('.tech-de-con').css('z-index', '100');
         }
         else{             
             d.width = "33%";
@@ -133,6 +153,8 @@ $(document).ready(function(){
             d.position = "inline block";            
             isFullscreen = false;
             $(".logo-header").slideDown(speed);
+            $(".tdc").fadeToggle('fast');
+            $('.tech-de-con').css('z-index', '');
         }
         $(".tech-de-con").animate(d,speed); 
     });
@@ -145,12 +167,14 @@ $(document).ready(function(){
             d.height = "100%"; 
             isFullscreen = true;
             $(".logo-header").slideUp(speed);
+            $(".cs").fadeToggle('slow');
         }
         else{             
             d.width = "33%";
             d.height = "70%";            
             isFullscreen = false;
             $(".logo-header").slideDown(speed);
+            $(".cs").fadeToggle('fast');
         }
         $(".ckt-sprint").animate(d,speed); 
     });

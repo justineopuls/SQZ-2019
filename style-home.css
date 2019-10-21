@@ -6,6 +6,10 @@ h2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+a { 
+    color: inherit;
+} 
+
 .logo-header {
     height: 30%;
     width: 100%;
@@ -33,6 +37,41 @@ h2 {
     bottom: 0;
     overflow-x: hidden;
     padding-top: 20px;
+}
+
+.split-three-left {
+    height: 65%;
+    width: 33%;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 50%;
+    overflow-x: hidden;
+    padding-top: 20px;
+    padding-left: 1%;
+}
+
+.split-three-right {
+    height: 65%;
+    width: 33%;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    padding-right: 1%;
+}
+
+.split-three-left-tdc {
+    height: 80%;
+    width: 33%;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 50%;
+    overflow-x: hidden;
+    padding-top: 20px;
+    padding-left: 1%;
 }
 
 .left {
@@ -129,4 +168,15 @@ h2 {
     calc(0% + 5px) 
     calc(100% - 5px)
     );
+}
+
+.hsw {
+    z-index: 999;
+}
+
+.mechanics {
+    background-color: transparent;
+    color: black;
+    font-size: 1.5em;
+    font-family: 'Franklin Gothic Medium';
 }
